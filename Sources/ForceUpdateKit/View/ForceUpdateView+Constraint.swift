@@ -11,69 +11,67 @@ import UIKit
 public extension ForceUpdateView {
     func setUpdateImageViewConstraint() {
         updateImageView.translatesAutoresizingMaskIntoConstraints = false
-           let horizontalConstraint = NSLayoutConstraint(
+           NSLayoutConstraint(
             item: updateImageView,
             attribute: .centerX,
             relatedBy: .equal,
             toItem: contentView,
             attribute: .centerX,
             multiplier: 1,
-            constant: 0)
-           let verticalConstraint = NSLayoutConstraint(
+            constant: 0).isActive = true
+           NSLayoutConstraint(
             item: updateImageView,
             attribute: .centerY,
             relatedBy: .equal,
             toItem: contentView,
             attribute: .centerY,
-            multiplier: -150,
-            constant: 0)
-           let widthConstraint = NSLayoutConstraint(
+            multiplier: 1,
+            constant: -150).isActive = true
+           NSLayoutConstraint(
             item: updateImageView,
             attribute: .width,
             relatedBy: .equal,
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: 191)
-           let heightConstraint = NSLayoutConstraint(
+            constant: 191).isActive = true
+           NSLayoutConstraint(
             item: updateImageView,
             attribute: .height,
             relatedBy: .equal,
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
-            constant: 139)
-        contentView.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
-    } 
+            constant: 139).isActive = true
+    }
     
     func setTitleViewConstraint() {
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
-           let horizontalConstraint = NSLayoutConstraint(
+           NSLayoutConstraint(
             item: headerTitle,
             attribute: .centerX,
             relatedBy: .equal,
             toItem: contentView,
             attribute: .centerX,
             multiplier: 1,
-            constant: 0)
-           let verticalConstraint = NSLayoutConstraint(
+            constant: 0).isActive = true
+           NSLayoutConstraint(
             item: headerTitle,
             attribute: .top,
             relatedBy: .equal,
             toItem: updateImageView,
             attribute: .top,
-            multiplier: 56,
-            constant: 0)
+            multiplier: 1,
+            constant: 56).isActive = true
         
         headerTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
-           let heightConstraint = NSLayoutConstraint(
+           NSLayoutConstraint(
             item: headerTitle,
             attribute: .height,
             relatedBy: .greaterThanOrEqual,
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
-            constant: 50)
-        contentView.addConstraints([horizontalConstraint, verticalConstraint, heightConstraint])
+            constant: 50).isActive = true
     }
 }
