@@ -64,7 +64,10 @@ public extension ForceUpdateView {
             multiplier: 1,
             constant: 56).isActive = true
         
-        headerTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24).isActive = true
+        headerTitle.leadingAnchor.constraint(
+            equalTo: contentView.leadingAnchor,
+            constant: 24).isActive = true
+        
            NSLayoutConstraint(
             item: headerTitle,
             attribute: .height,
@@ -73,5 +76,41 @@ public extension ForceUpdateView {
             attribute: .notAnAttribute,
             multiplier: 1,
             constant: 50).isActive = true
+    }
+    
+    func setButtonConstraint() {
+        updateButton.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint(
+            item: updateButton,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: contentView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0).isActive = true
+           NSLayoutConstraint(
+            item: updateButton,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: headerTitle,
+            attribute: .bottom,
+            multiplier: 1,
+            constant: 62).isActive = true
+           NSLayoutConstraint(
+            item: updateButton,
+            attribute: .width,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+            multiplier: 1,
+            constant: 222).isActive = true
+           NSLayoutConstraint(
+            item: updateButton,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1,
+            constant: 56).isActive = true
     }
 }

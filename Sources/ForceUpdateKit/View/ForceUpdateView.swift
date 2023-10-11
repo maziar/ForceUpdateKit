@@ -119,6 +119,7 @@ public class ForceUpdateView: UIView {
         commonInit()
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
+        setButtonConstraint()
     }
     
     @objc
