@@ -12,7 +12,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "ForceUpdateKit"),
+            name: "ForceUpdateKit",
+            resources: [.process("Resources")]
+        ),
         .testTarget(
             name: "ForceUpdateKitTests",
             dependencies: ["ForceUpdateKit"]),
