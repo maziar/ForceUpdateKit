@@ -23,6 +23,7 @@ public struct ForceUpdateConfig {
     public var headerTitle = "Force Update Required"
     public var updateButtonBackColor: UIColor = .blue
     public var updateButtonTitleColor: UIColor = .white
+    public var headerTitleColor: UIColor = .black
     public var updateButtonCornerRadius: CGFloat = 8.0
     public var updateButtonBorderWidth: CGFloat = 0.0
     public var updateButtonBorderColor: UIColor = .clear
@@ -70,6 +71,7 @@ public class ForceUpdateView: UIView {
         let headerTitle = UILabel(frame: config.headerTitleFrame)
         headerTitle.font = config.headerTitleFont
         headerTitle.text = config.headerTitle
+        headerTitle.textColor = config.headerTitleColor
         headerTitle.textAlignment = .center
         return headerTitle
     }()
