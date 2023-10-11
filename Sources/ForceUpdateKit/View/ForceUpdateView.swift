@@ -83,6 +83,7 @@ public class ForceUpdateView: UIView {
         headerTitle.text = config.headerTitle
         headerTitle.textColor = config.headerTitleColor
         headerTitle.textAlignment = .center
+        headerTitle.numberOfLines = 0
         return headerTitle
     }()
     
