@@ -23,6 +23,7 @@ public struct ForceUpdateConfig {
     public var updateImage: UIImage = UIImage(named: "update-icon",
                                               in: Bundle.module,
                                               compatibleWith: nil) ?? UIImage()
+    public var updateImageColor: UIColor?
     public var headerTitleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
     public var headerTitle = "Force Update Required"
     public var updateButtonBackColor: UIColor = .blue
@@ -67,7 +68,12 @@ public class ForceUpdateView: UIView {
     
     lazy var updateImageView: UIImageView = {
         let updateImageView = UIImageView()
-        updateImageView.image = config.updateImage
+        if let color = config.updateImageColor {
+            let img = config.updateImage.imageWithColor(color: color)
+            updateImageView.image = img
+        } else {
+            updateImageView.image = config.updateImage
+        }
         return updateImageView
     }()
       
