@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 public struct ForceUpdateConfig {
+    public init() {}
     public var updateButtonFrame: CGRect = CGRect(x: 265, y: 5, width: 30, height: 30)
     public var headerTitleFrame: CGRect = CGRect(x: 0, y: 0, width: 300, height: 40)
     public var updateButtonNortmalTitle: String = "Update"
