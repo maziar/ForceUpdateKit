@@ -17,8 +17,12 @@ public struct ForceUpdateConfig {
     public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
     public var contentViewFrame: CGRect = CGRect(x: 0, y: 40, width: 300, height: 260)
     public var contentViewBackColor: UIColor = .white
-    public var contentBackGroundImage: UIImage = UIImage(named: "") ?? UIImage()
-    public var updateImage: UIImage = UIImage(named: "update-icon") ?? UIImage()
+    public var contentBackGroundImage: UIImage = UIImage(named: "",
+                                                         in: Bundle.module,
+                                                         compatibleWith: nil) ?? UIImage()
+    public var updateImage: UIImage = UIImage(named: "update-icon",
+                                              in: Bundle.module,
+                                              compatibleWith: nil) ?? UIImage()
     public var headerTitleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
     public var headerTitle = "Force Update Required"
     public var updateButtonBackColor: UIColor = .blue
