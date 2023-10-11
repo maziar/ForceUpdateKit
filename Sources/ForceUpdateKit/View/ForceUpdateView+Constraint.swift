@@ -60,7 +60,7 @@ public extension ForceUpdateView {
             attribute: .top,
             relatedBy: .equal,
             toItem: updateImageView,
-            attribute: .top,
+            attribute: .bottom,
             multiplier: 1,
             constant: 56).isActive = true
         
