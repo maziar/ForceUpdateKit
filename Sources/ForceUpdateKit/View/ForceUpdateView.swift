@@ -9,23 +9,23 @@ import Foundation
 import UIKit
 
 public struct ForceUpdateConfig {
-    var updateButtonFrame: CGRect = CGRect(x: 265, y: 5, width: 30, height: 30)
-    var headerTitleFrame: CGRect = CGRect(x: 0, y: 0, width: 300, height: 40)
-    var updateButtonNortmalTitle: String = "Update"
-    var updateButtonSelectedTitle: String = "Update"
-    var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
-    var contentViewFrame: CGRect = CGRect(x: 0, y: 40, width: 300, height: 260)
-    var contentViewBackColor: UIColor = .white
-    var contentBackGroundImage: UIImage = UIImage(named: "") ?? UIImage()
-    var updateImage: UIImage = UIImage(named: "update-icon") ?? UIImage()
-    var headerTitleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
-    var headerTitle = "Force Update Required"
-    var updateButtonBackColor: UIColor = .blue
-    var updateButtonTitleColor: UIColor = .white
-    var updateButtonCornerRadius: CGFloat = 8.0
-    var updateButtonBorderWidth: CGFloat = 0.0
-    var updateButtonBorderColor: UIColor = .clear
-    var style: ForceUpdateViewStyle = .fullscreen1
+    public var updateButtonFrame: CGRect = CGRect(x: 265, y: 5, width: 30, height: 30)
+    public var headerTitleFrame: CGRect = CGRect(x: 0, y: 0, width: 300, height: 40)
+    public var updateButtonNortmalTitle: String = "Update"
+    public var updateButtonSelectedTitle: String = "Update"
+    public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
+    public var contentViewFrame: CGRect = CGRect(x: 0, y: 40, width: 300, height: 260)
+    public var contentViewBackColor: UIColor = .white
+    public var contentBackGroundImage: UIImage = UIImage(named: "") ?? UIImage()
+    public var updateImage: UIImage = UIImage(named: "update-icon") ?? UIImage()
+    public var headerTitleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
+    public var headerTitle = "Force Update Required"
+    public var updateButtonBackColor: UIColor = .blue
+    public var updateButtonTitleColor: UIColor = .white
+    public var updateButtonCornerRadius: CGFloat = 8.0
+    public var updateButtonBorderWidth: CGFloat = 0.0
+    public var updateButtonBorderColor: UIColor = .clear
+    public var style: ForceUpdateViewStyle = .fullscreen1
 }
 
 public class ForceUpdateView: UIView {

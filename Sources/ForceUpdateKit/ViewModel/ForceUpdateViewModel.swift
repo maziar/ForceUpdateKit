@@ -12,8 +12,8 @@ public protocol ForceUpdateViewModel {
 }
 
 public final class DefaultForceUpdateViewModel: ForceUpdateViewModel {
+    public init() {}
     public func update() {
-        
     }
 }
 
