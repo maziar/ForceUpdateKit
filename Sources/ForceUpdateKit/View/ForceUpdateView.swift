@@ -53,7 +53,7 @@ public class ForceUpdateView: UIView {
                                    borderColor: config.updateButtonBorderColor)
         updateButton.addTarget(self, action: #selector(update), for: .touchUpInside)
         updateButton.titleLabel?.font = config.updateButtonFont
-        updateButton.titleLabel?.tintColor = config.updateButtonTitleColor
+        updateButton.setTitleColor(config.updateButtonTitleColor, for: .normal)
         return updateButton
     }()
     
