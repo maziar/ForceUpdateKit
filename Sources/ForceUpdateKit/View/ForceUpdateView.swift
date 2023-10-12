@@ -24,7 +24,8 @@ public struct ForceUpdateConfig {
                                               in: Bundle.module,
                                               compatibleWith: nil) ?? UIImage()
     public var updateImageColor: UIColor?
-    public var headerTitleFont = UIFont.systemFont(ofSize: 22, weight: .medium)
+    public var headerTitleFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+    public var updateButtonFont = UIFont.systemFont(ofSize: 12, weight: .medium)
     public var headerTitle = "Force Update Required"
     public var updateButtonBackColor: UIColor = .blue
     public var updateButtonTitleColor: UIColor = .white
@@ -51,6 +52,7 @@ public class ForceUpdateView: UIView {
                                    borderWidth: config.updateButtonBorderWidth,
                                    borderColor: config.updateButtonBorderColor)
         updateButton.addTarget(self, action: #selector(update), for: .touchUpInside)
+        updateButton.titleLabel?.font = config.updateButtonFont
         return updateButton
     }()
     
