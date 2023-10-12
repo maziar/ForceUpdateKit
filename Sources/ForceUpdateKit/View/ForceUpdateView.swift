@@ -30,7 +30,7 @@ public struct ForceUpdateConfig {
     public var updateButtonBackColor: UIColor = .blue
     public var updateButtonTitleColor: UIColor = .white
     public var headerTitleColor: UIColor = .black
-    public var updateButtonCornerRadius: CGFloat = 8.0
+    public var updateButtonCornerRadius: CGFloat = 20.0
     public var updateButtonBorderWidth: CGFloat = 0.0
     public var updateButtonBorderColor: UIColor = .clear
     public var style: ForceUpdateViewStyle = .fullscreen1
@@ -53,6 +53,7 @@ public class ForceUpdateView: UIView {
                                    borderColor: config.updateButtonBorderColor)
         updateButton.addTarget(self, action: #selector(update), for: .touchUpInside)
         updateButton.titleLabel?.font = config.updateButtonFont
+        updateButton.titleLabel?.textColor = config.updateButtonTitleColor
         return updateButton
     }()
     
