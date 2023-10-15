@@ -47,7 +47,7 @@ public class ForceUpdateView: UIView {
         updateButton.setCurvedView(cornerRadius: config.updateButtonCornerRadius,
                                    borderWidth: config.updateButtonBorderWidth,
                                    borderColor: config.updateButtonBorderColor)
-        updateButton.addTarget(self, action: #selector(update), for: .touchUpInside)
+        updateButton.addTarget(self, action: #selector(openLink), for: .touchUpInside)
         updateButton.titleLabel?.font = config.updateButtonFont
         updateButton.setTitleColor(config.updateButtonTitleColor, for: .normal)
         return updateButton
@@ -91,10 +91,13 @@ public class ForceUpdateView: UIView {
         contentView.setCurvedView(cornerRadius: 20)
     }
     
-    public required init(viewModel: ForceUpdateViewModel = DefaultForceUpdateViewModel(),
+    public required init(viewModel: ForceUpdateViewModel,
                          config: ForceUpdateViewConfig = ForceUpdateViewConfig()) {
         self.config = config
         self.viewModel = viewModel
+        self.config.headerTitle = viewModel.response.title ?? String()
+        self.config.updateButtonNortmalTitle = viewModel.response.buttonTitle ?? String()
+        self.config.updateButtonSelectedTitle = viewModel.response.buttonTitle ?? String()
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         setup()
     }
@@ -122,7 +125,7 @@ public class ForceUpdateView: UIView {
     }
     
     @objc
-    func update() {
-        viewModel.update()
+    func openLink() {
+        viewModel.openLink()
     }
 }

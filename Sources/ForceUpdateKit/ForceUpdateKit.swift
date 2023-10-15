@@ -14,7 +14,7 @@ public class ForceUpdateKit: Updatable {
         do {
             let request = UpdateRequest(appId: "", version: "")
             let response = try await update(request: request)
-            let forceUpdateView = await ForceUpdateView()
+            let forceUpdateView = await ForceUpdateView(viewModel: DefaultForceUpdateViewModel(response: response))
             let window = await UIApplication.shared.windows.last!
             await window.addSubview(forceUpdateView)
             await forceUpdateView.fixInView(window)
