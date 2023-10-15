@@ -9,6 +9,7 @@ public class ForceUpdateKit {
             let window = UIWindow(windowScene: scene)
             window.addSubview(forceUpdateView)
             forceUpdateView.fixInView(window)
+            window.makeKeyAndVisible()
         }
     }
 }
