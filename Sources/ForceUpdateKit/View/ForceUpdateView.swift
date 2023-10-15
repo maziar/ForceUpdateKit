@@ -8,14 +8,11 @@
 import Foundation
 import UIKit
 
-public struct ForceUpdateConfig {
+public struct ForceUpdateViewConfig {
     public init() {}
-    public var updateButtonFrame: CGRect = CGRect(x: 265, y: 5, width: 30, height: 30)
-    public var headerTitleFrame: CGRect = CGRect(x: 0, y: 0, width: 300, height: 40)
-    public var updateButtonNortmalTitle: String = "Update"
-    public var updateButtonSelectedTitle: String = "Update"
+    public var updateButtonNortmalTitle: String = "Update New Version"
+    public var updateButtonSelectedTitle: String = "Update New Version"
     public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
-    public var contentViewFrame: CGRect = CGRect(x: 0, y: 40, width: 300, height: 260)
     public var contentViewBackColor: UIColor = .white
     public var contentBackGroundImage: UIImage = UIImage(named: "",
                                                          in: Bundle.module,
@@ -37,12 +34,11 @@ public struct ForceUpdateConfig {
 }
 
 public class ForceUpdateView: UIView {
-    var config: ForceUpdateConfig
+    var config: ForceUpdateViewConfig
     var viewModel: ForceUpdateViewModel
     
     lazy var updateButton: UIButton = {
         let updateButton = UIButton()
-        updateButton.frame = config.updateButtonFrame
         updateButton.backgroundColor = config.updateButtonBackColor
         updateButton.titleLabel?.textColor = config.updateButtonTitleColor
         updateButton.setTitle(config.updateButtonNortmalTitle, for: .normal)
@@ -81,7 +77,7 @@ public class ForceUpdateView: UIView {
     }()
       
     lazy var headerTitle: UILabel = {
-        let headerTitle = UILabel(frame: config.headerTitleFrame)
+        let headerTitle = UILabel()
         headerTitle.font = config.headerTitleFont
         headerTitle.text = config.headerTitle
         headerTitle.textColor = config.headerTitleColor
@@ -95,11 +91,11 @@ public class ForceUpdateView: UIView {
         contentView.setCurvedView(cornerRadius: 20)
     }
     
-    public required init(viewModel: ForceUpdateViewModel,
-                         config: ForceUpdateConfig) {
+    public required init(viewModel: ForceUpdateViewModel = DefaultForceUpdateViewModel(),
+                         config: ForceUpdateViewConfig = ForceUpdateViewConfig()) {
         self.config = config
         self.viewModel = viewModel
-        super.init(frame: config.contentViewFrame)
+        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         setup()
     }
     
