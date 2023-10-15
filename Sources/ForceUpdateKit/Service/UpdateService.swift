@@ -11,7 +11,9 @@ public class UpdateService: UpdateServiceProtocol {
     public init() {}
     public func update(request: UpdateRequest) async throws -> UpdateResponse {
         do {
-            let url = URL(string: request.route)!
+            guard let url = URL(string: request.route) else {
+                return UpdateResponse(forceUpdate: false)
+            }
             var request = URLRequest(url: url)
             request.setValue(
                 "application/json",

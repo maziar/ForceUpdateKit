@@ -22,7 +22,14 @@ public class ForceUpdateKit: Updatable {
                 let window = await UIApplication.shared.windows.last!
                 await window.addSubview(forceUpdateView)
                 await forceUpdateView.fixInView(window)
+                animate(view: forceUpdateView)
             }
         }
+    }
+    
+    func animate(view: UIView) {
+        UIView.animate(withDuration: 1.0, animations: {
+            view.alpha = 1.0
+        })
     }
 }
