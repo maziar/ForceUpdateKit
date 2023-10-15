@@ -7,8 +7,9 @@
 
 import Foundation
 public struct UpdateRequest {
-    public var appId: String
-    public var version: String
+    public var appId: String = Bundle.main.bundleIdentifier ?? String()
+    public var version: String = Bundle.main.releaseVersionNumber ?? String()
+    public var route: String
     
     var dictionary: [String: Any] {
         return ["appId": appId,

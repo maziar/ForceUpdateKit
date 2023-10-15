@@ -11,15 +11,18 @@ public class ForceUpdateKit: Updatable {
     }
     
     public func configure(config: UpdateServiceConfig = UpdateServiceConfig()) async {
-        do {
-            let request = UpdateRequest(appId: "", version: "")
+        Task {
+            let request = UpdateRequest(appId: config.appId,
+                                        version: config.version,
+                                        route: config.route)
             let response = try await update(request: request)
-            let forceUpdateView = await ForceUpdateView(viewModel: DefaultForceUpdateViewModel(response: response))
-            let window = await UIApplication.shared.windows.last!
-            await window.addSubview(forceUpdateView)
-            await forceUpdateView.fixInView(window)
-        } catch {
-            print("Oops!")
+            let viewModel = DefaultForceUpdateViewModel(response: response)
+            let forceUpdateView = await ForceUpdateView(viewModel: viewModel)
+            if response.forceUpdate {
+                let window = await UIApplication.shared.windows.last!
+                await window.addSubview(forceUpdateView)
+                await forceUpdateView.fixInView(window)
+            }
         }
     }
 }
