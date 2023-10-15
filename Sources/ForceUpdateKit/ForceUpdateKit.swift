@@ -2,14 +2,24 @@
 // https://docs.swift.org/swift-book
 import Foundation
 import UIKit
-public class ForceUpdateKit {
-    public static func configure(config: UpdateServiceConfig = UpdateServiceConfig()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            let forceUpdateView = ForceUpdateView()
-            let window = UIApplication.shared.windows.last!
-            window.addSubview(forceUpdateView)
-            forceUpdateView.fixInView(window)
-            window.makeKeyAndVisible()
+import Combine
+
+public class ForceUpdateKit: Updatable {
+    public let updateService: UpdateServiceProtocol!
+    public init(updateService: UpdateServiceProtocol = UpdateService()) {
+        self.updateService = updateService
+    }
+    
+    public func configure(config: UpdateServiceConfig = UpdateServiceConfig()) async {
+        do {
+            let request = UpdateRequest(appId: "", version: "")
+            let response = try await update(request: request)
+            let forceUpdateView = await ForceUpdateView()
+            let window = await UIApplication.shared.windows.last!
+            await window.addSubview(forceUpdateView)
+            await forceUpdateView.fixInView(window)
+        } catch {
+            print("Oops!")
         }
     }
 }

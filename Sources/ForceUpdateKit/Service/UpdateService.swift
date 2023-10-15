@@ -8,6 +8,7 @@
 import Foundation
 
 public class UpdateService: UpdateServiceProtocol {
+    public init() {}
     public func update(request: UpdateRequest) async throws -> UpdateResponse {
         do {
             let url = URL(string: "https://my.api.mockaroo.com/forceupdate.json?key=2202ab40")!
