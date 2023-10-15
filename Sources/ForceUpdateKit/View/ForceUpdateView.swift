@@ -89,7 +89,6 @@ public class ForceUpdateView: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         contentView.setCurvedView(cornerRadius: 20)
-        self.alpha = 0
     }
     
     public required init(viewModel: ForceUpdateViewModel,
