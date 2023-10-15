@@ -23,7 +23,7 @@ public struct ForceUpdateViewConfig {
     public var updateImageColor: UIColor?
     public var headerTitleFont = UIFont.systemFont(ofSize: 12, weight: .medium)
     public var updateButtonFont = UIFont.systemFont(ofSize: 12, weight: .medium)
-    public var headerTitle = "Force Update Required"
+    public var headerTitle = "It's time to update The version you are using is old, need to update the latest version in order to experience new features."
     public var updateButtonBackColor: UIColor = .blue
     public var updateButtonTitleColor: UIColor = .white
     public var headerTitleColor: UIColor = .black
