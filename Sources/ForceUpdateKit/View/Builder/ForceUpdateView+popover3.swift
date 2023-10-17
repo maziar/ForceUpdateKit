@@ -1,15 +1,46 @@
 //
 //  File.swift
-//  
 //
-//  Created by Maziar Saadatfar on 10/12/23.
+//
+//  Created by Maziar Saadatfar on 10/16/23.
 //
 
 import Foundation
 import UIKit
 
-public extension ForceUpdateView {
-    func setUpdateImageViewConstraint() {
+public struct PopoverStyle3: ForceUpdateViewProtocol {
+    public var descriptionLabel: UILabel
+    public var versionLabel: UILabel
+    public var line: UIView
+    public var headerTitle: UILabel
+    public var updateImageView: UIImageView
+    public var contentView: UIView
+    public var updateButton: UIButton
+    
+    public init(headerTitle: UILabel,
+                updateImageView: UIImageView,
+                contentView: UIView,
+                updateButton: UIButton,
+                descriptionLabel: UILabel,
+                versionLabel: UILabel,
+                line: UIView
+    ) {
+        self.headerTitle = headerTitle
+        self.updateImageView = updateImageView
+        self.contentView = contentView
+        self.updateButton = updateButton
+        self.descriptionLabel = descriptionLabel
+        self.versionLabel = versionLabel
+        self.line = line
+    }
+    
+    public func setupViewStyle(config: ForceUpdateViewConfig) {
+        setUpdateImageViewConstraint()
+        setTitleViewConstraint()
+        setButtonConstraint()
+    }
+    
+    public func setUpdateImageViewConstraint() {
         updateImageView.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint(
             item: updateImageView,
@@ -45,7 +76,7 @@ public extension ForceUpdateView {
             constant: 139).isActive = true
     }
     
-    func setTitleViewConstraint() {
+    public func setTitleViewConstraint() {
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint(
             item: headerTitle,
@@ -78,7 +109,7 @@ public extension ForceUpdateView {
             constant: 50).isActive = true
     }
     
-    func setButtonConstraint() {
+    public func setButtonConstraint() {
         updateButton.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint(
             item: updateButton,

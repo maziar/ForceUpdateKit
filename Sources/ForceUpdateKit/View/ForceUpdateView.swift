@@ -21,12 +21,23 @@ public struct ForceUpdateViewConfig {
                                               in: Bundle.module,
                                               compatibleWith: nil) ?? UIImage()
     public var updateImageColor: UIColor?
-    public var headerTitleFont = UIFont.systemFont(ofSize: 12, weight: .medium)
     public var updateButtonFont = UIFont.systemFont(ofSize: 12, weight: .medium)
-    public var headerTitle = "It's time to update The version you are using is old, need to update the latest version in order to experience new features."
-    public var updateButtonBackColor: UIColor = .blue
-    public var updateButtonTitleColor: UIColor = .white
+    
+    public var headerTitleFont = UIFont.systemFont(ofSize: 13, weight: .bold)
+    public var headerTitle = "It's time to update"
     public var headerTitleColor: UIColor = .black
+
+    public var descriptionFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+    public var descriptionText = "It's time to update The version you are using is old, need to update the latest version in order to experience new features."
+    public var descriptionTextColor: UIColor = .gray
+    
+    public var versionFont = UIFont.systemFont(ofSize: 10, weight: .bold)
+    public var versionText = "It's time to update"
+    public var versionTextColor: UIColor = .gray
+    
+    public var updateButtonBackColor: UIColor = .blue
+    public var lineColor: UIColor = .lightGray
+    public var updateButtonTitleColor: UIColor = .white
     public var updateButtonCornerRadius: CGFloat = 20.0
     public var updateButtonBorderWidth: CGFloat = 0.0
     public var updateButtonBorderColor: UIColor = .clear
@@ -86,6 +97,32 @@ public class ForceUpdateView: UIView {
         return headerTitle
     }()
     
+    lazy var descriptionLabel: UILabel = {
+        let descriptionLabel = UILabel()
+        descriptionLabel.font = config.descriptionFont
+        descriptionLabel.text = config.descriptionText
+        descriptionLabel.textColor = config.descriptionTextColor
+        descriptionLabel.textAlignment = .center
+        descriptionLabel.numberOfLines = 0
+        return descriptionLabel
+    }()
+    
+    lazy var versionLabel: UILabel = {
+        let versionLabel = UILabel()
+        versionLabel.font = config.versionFont
+        versionLabel.text = config.versionText
+        versionLabel.textColor = config.versionTextColor
+        versionLabel.textAlignment = .center
+        versionLabel.numberOfLines = 0
+        return versionLabel
+    }()
+    
+    lazy var line: UIView = {
+        let line = UIView()
+        line.backgroundColor = config.lineColor
+        return line
+    }()
+    
     public override func layoutSubviews() {
         super.layoutSubviews()
         contentView.setCurvedView(cornerRadius: 20)
@@ -115,13 +152,25 @@ public class ForceUpdateView: UIView {
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        contentView.addSubview(headerTitle)
         contentView.addSubview(updateImageView)
         contentView.addSubview(updateButton)
+        contentView.addSubview(versionLabel)
         commonInit()
-        setUpdateImageViewConstraint()
-        setTitleViewConstraint()
-        setButtonConstraint()
+        setupStyle()
+    }
+    
+    func setupStyle() {
+        let style = ForceUpdateViewStyle.make(
+            style: config.style,
+            headerTitle: headerTitle,
+            updateImageView: updateImageView,
+            contentView: contentView,
+            updateButton: updateButton,
+            descriptionLabel: descriptionLabel,
+            versionLabel: versionLabel,
+            line: line
+        )
+        style.setupViewStyle(config: config)
     }
     
     @objc
