@@ -34,7 +34,7 @@ public struct PopoverStyle3: ForceUpdateViewProtocol {
         self.line = line
     }
     
-    public func setupViewStyle(config: ForceUpdateViewConfig) {
+    public func setupViewStyle() {
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
         setButtonConstraint()

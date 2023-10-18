@@ -15,5 +15,5 @@ public protocol ForceUpdateViewProtocol {
     var descriptionLabel: UILabel { get set }
     var versionLabel: UILabel { get set }
     var line: UIView { get set }
-    func setupViewStyle(config: ForceUpdateViewConfig)
+    func setupViewStyle()
 }

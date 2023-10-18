@@ -34,7 +34,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
         self.line = line
     }
     
-    public func setupViewStyle(config: ForceUpdateViewConfig) {
+    public func setupViewStyle() {
         contentView.addSubview(updateImageView)
         contentView.addSubview(headerTitle)
         contentView.addSubview(descriptionLabel)
