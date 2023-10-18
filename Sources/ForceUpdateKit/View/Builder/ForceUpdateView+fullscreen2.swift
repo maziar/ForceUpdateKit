@@ -168,7 +168,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
             toItem: updateButton,
             attribute: .top,
             multiplier: 1,
-            constant: 10).isActive = true
+            constant: -10).isActive = true
         line.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
@@ -199,7 +199,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
             toItem: versionLabel,
             attribute: .top,
             multiplier: 1,
-            constant: 62).isActive = true
+            constant: -62).isActive = true
         NSLayoutConstraint(
             item: updateButton,
             attribute: .width,
@@ -235,7 +235,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
             toItem: contentView,
             attribute: .bottom,
             multiplier: 1,
-            constant: 0).isActive = true
+            constant: -52).isActive = true
         versionLabel.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
