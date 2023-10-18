@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public struct ForceUpdateViewConfig {
+public class ForceUpdateViewConfig {
     public init() {}
     public var updateButtonNortmalTitle: String = "Update New Version"
     public var updateButtonSelectedTitle: String = "Update New Version"
@@ -32,7 +32,7 @@ public struct ForceUpdateViewConfig {
     public var descriptionTextColor: UIColor = .gray
     
     public var versionFont = UIFont.systemFont(ofSize: 10, weight: .bold)
-    public var versionText = "It's time to update"
+    public var versionText = "Up to 12.349 version Apr 2024."
     public var versionTextColor: UIColor = .gray
     
     public var updateButtonBackColor: UIColor = .blue
