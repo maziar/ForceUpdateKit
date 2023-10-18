@@ -197,12 +197,12 @@ public struct FullScreenStyle3: ForceUpdateViewProtocol {
             constant: 0).isActive = true
         NSLayoutConstraint(
             item: versionLabel,
-            attribute: .bottom,
+            attribute: .top,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: updateButton,
             attribute: .bottom,
             multiplier: 1,
-            constant: -52).isActive = true
+            constant: 16).isActive = true
         versionLabel.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
