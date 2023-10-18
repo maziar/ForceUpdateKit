@@ -143,7 +143,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         setDescriptionConstraint()
         setButtonConstraint()
         DispatchQueue.main.async {
-            self.popupView.bringSubviewToFront(self)
+            self.popupView.bringSubviewToFront(self.contentBackGroundImageView)
         }
     }
     
