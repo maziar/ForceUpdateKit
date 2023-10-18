@@ -130,7 +130,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         setTitleViewConstraint()
         setDescriptionConstraint()
         setButtonConstraint()
-        setVersionConstraint()
     }
     
     @objc
@@ -244,7 +243,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             item: descriptionLabel,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: popupView,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
