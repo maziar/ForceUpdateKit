@@ -132,7 +132,7 @@ public class ForceUpdateView: UIView {
             versionLabel: versionLabel,
             line: line
         )
-        style.setupViewStyle(config: config)
+        style.setupViewStyle()
     }
     
     @objc
