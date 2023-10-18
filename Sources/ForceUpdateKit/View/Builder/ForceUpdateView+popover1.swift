@@ -132,7 +132,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
         addSubview(popupView)
-        popupView.bringSubviewToFront(self)
         popupView.addSubview(updateImageView)
         popupView.addSubview(headerTitle)
         popupView.addSubview(descriptionLabel)
@@ -143,6 +142,9 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         setTitleViewConstraint()
         setDescriptionConstraint()
         setButtonConstraint()
+        DispatchQueue.main.async {
+            self.popupView.bringSubviewToFront(self)
+        }
     }
     
     @objc
