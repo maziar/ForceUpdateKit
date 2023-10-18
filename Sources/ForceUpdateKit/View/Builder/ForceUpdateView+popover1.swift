@@ -137,9 +137,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         setTitleViewConstraint()
         setDescriptionConstraint()
         setButtonConstraint()
-        DispatchQueue.main.async {
-            self.popupView.bringSubviewToFront(self.contentBackGroundImageView)
-        }
     }
     
     @objc
