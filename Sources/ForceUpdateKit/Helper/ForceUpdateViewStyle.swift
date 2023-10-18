@@ -17,80 +17,33 @@ public enum ForceUpdateViewStyle {
     case popover2
     case popover3
     case popover4
-    public static func make(style: ForceUpdateViewStyle,
-                            headerTitle: UILabel,
-                            updateImageView: UIImageView,
-                            contentView: UIView,
-                            updateButton: UIButton,
-                            descriptionLabel: UILabel,
-                            versionLabel: UILabel,
-                            line: UIView) -> ForceUpdateViewProtocol {
-        switch style {
+    public static func make(viewModel: ForceUpdateViewModel,
+                            config: ForceUpdateViewConfig) -> ForceUpdateViewProtocol {
+        switch config.style {
         case .fullscreen1:
-            return FullScreenStyle1(headerTitle: headerTitle,
-                                    updateImageView: updateImageView,
-                                    contentView: contentView,
-                                    updateButton: updateButton,
-                                    descriptionLabel: descriptionLabel,
-                                    versionLabel: versionLabel,
-                                    line: line
-            )
+            return ForceUpdateView_FullScreen1(viewModel: viewModel,
+                                               config: config)
         case .fullscreen2:
-            return FullScreenStyle2(headerTitle: headerTitle,
-                                    updateImageView: updateImageView,
-                                    contentView: contentView,
-                                    updateButton: updateButton,
-                                    descriptionLabel: descriptionLabel,
-                                    versionLabel: versionLabel,
-                                    line: line)
+            return ForceUpdateView_FullScreen2(viewModel: viewModel,
+                                               config: config)
         case .fullscreen3:
-            return FullScreenStyle3(headerTitle: headerTitle,
-                                    updateImageView: updateImageView,
-                                    contentView: contentView,
-                                    updateButton: updateButton,
-                                    descriptionLabel: descriptionLabel,
-                                    versionLabel: versionLabel,
-                                    line: line)
+            return ForceUpdateView_FullScreen3(viewModel: viewModel,
+                                               config: config)
         case .fullscreen4:
-            return FullScreenStyle4(headerTitle: headerTitle,
-                                    updateImageView: updateImageView,
-                                    contentView: contentView,
-                                    updateButton: updateButton,
-                                    descriptionLabel: descriptionLabel,
-                                    versionLabel: versionLabel,
-                                    line: line)
+            return ForceUpdateView_FullScreen4(viewModel: viewModel,
+                                               config: config)
         case .popover1:
-            return PopoverStyle1(headerTitle: headerTitle,
-                                 updateImageView: updateImageView,
-                                 contentView: contentView,
-                                 updateButton: updateButton,
-                                 descriptionLabel: descriptionLabel,
-                                 versionLabel: versionLabel,
-                                 line: line)
+            return ForceUpdateView_Popover1(viewModel: viewModel,
+                                            config: config)
         case .popover2:
-            return PopoverStyle2(headerTitle: headerTitle,
-                                 updateImageView: updateImageView,
-                                 contentView: contentView,
-                                 updateButton: updateButton,
-                                 descriptionLabel: descriptionLabel,
-                                 versionLabel: versionLabel,
-                                 line: line)
+            return ForceUpdateView_Popover2(viewModel: viewModel,
+                                            config: config)
         case .popover3:
-            return PopoverStyle3(headerTitle: headerTitle,
-                                 updateImageView: updateImageView,
-                                 contentView: contentView,
-                                 updateButton: updateButton,
-                                 descriptionLabel: descriptionLabel,
-                                 versionLabel: versionLabel,
-                                 line: line)
+            return ForceUpdateView_Popover3(viewModel: viewModel,
+                                            config: config)
         case .popover4:
-            return PopoverStyle4(headerTitle: headerTitle,
-                                 updateImageView: updateImageView,
-                                 contentView: contentView,
-                                 updateButton: updateButton,
-                                 descriptionLabel: descriptionLabel,
-                                 versionLabel: versionLabel,
-                                 line: line)
+            return ForceUpdateView_Popover4(viewModel: viewModel,
+                                            config: config)
         }
     }
 }

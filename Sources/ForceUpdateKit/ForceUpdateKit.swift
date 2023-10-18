@@ -15,10 +15,10 @@ public class ForceUpdateKit: Updatable {
             let request = UpdateRequest(appId: config.appId,
                                         version: config.version,
                                         route: config.route)
-            let response = try await update(request: request)
+            let response = try await self.update(request: request)
             let viewModel = DefaultForceUpdateViewModel(response: response)
-            let forceUpdateView = await ForceUpdateView(viewModel: viewModel,
-                                                        config: config.viewConfig)
+            let forceUpdateView = ForceUpdateViewStyle.make(viewModel: viewModel,
+                                                            config: config.viewConfig)
 //            if response.forceUpdate {
                 let window = await UIApplication.shared.windows.last!
                 await window.addSubview(forceUpdateView)
