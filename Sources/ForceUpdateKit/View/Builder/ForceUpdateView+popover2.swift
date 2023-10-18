@@ -38,7 +38,7 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
     lazy var popupView: UIView = {
         let popupView = UIView()
         popupView.backgroundColor = config.popupViewBackColor
-        popupView.setCurvedView(cornerRadius: 15.0)
+        popupView.setCurvedView(cornerRadius: config.popupViewCornerRadius)
         return popupView
     }()
     

@@ -15,8 +15,6 @@ public enum ForceUpdateViewStyle {
     case fullscreen4
     case popover1
     case popover2
-    case popover3
-    case popover4
     public static func make(viewModel: ForceUpdateViewModel,
                             config: ForceUpdateViewConfig) -> ForceUpdateViewProtocol {
         switch config.style {
@@ -37,12 +35,6 @@ public enum ForceUpdateViewStyle {
                                             config: config)
         case .popover2:
             return ForceUpdateView_Popover2(viewModel: viewModel,
-                                            config: config)
-        case .popover3:
-            return ForceUpdateView_Popover3(viewModel: viewModel,
-                                            config: config)
-        case .popover4:
-            return ForceUpdateView_Popover4(viewModel: viewModel,
                                             config: config)
         }
     }

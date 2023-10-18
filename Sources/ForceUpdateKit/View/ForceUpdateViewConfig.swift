@@ -16,7 +16,10 @@ public class ForceUpdateViewConfig {
     public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
     
     public var contentViewBackColor: UIColor = .white
+    
     public var popupViewBackColor: UIColor = .black
+    public var popupViewCornerRadius: CGFloat = 15.0
+    
     public var contentBackGroundImage: UIImage = UIImage(named: "",
                                                          in: Bundle.module,
                                                          compatibleWith: nil) ?? UIImage()
