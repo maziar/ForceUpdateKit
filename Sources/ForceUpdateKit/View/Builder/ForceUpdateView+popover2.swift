@@ -31,7 +31,15 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
     lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = config.contentViewBackColor
+        contentView.alpha = 0.8
         return contentView
+    }()
+    
+    lazy var popupView: UIView = {
+        let popupView = UIView()
+        popupView.backgroundColor = config.popupViewBackColor
+        popupView.setCurvedView(cornerRadius: 15.0)
+        return popupView
     }()
     
     lazy var contentBackGroundImageView: UIImageView = {
@@ -94,15 +102,8 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
         return versionLabel
     }()
     
-    lazy var line: UIView = {
-        let line = UIView()
-        line.backgroundColor = config.lineColor
-        return line
-    }()
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.setCurvedView(cornerRadius: 20)
     }
     
     public required init(viewModel: ForceUpdateViewModel,
@@ -121,19 +122,23 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func commonInit() {
-        contentView.fixInView(self)
-    }
-    
     public func setup() {
         addSubview(contentView)
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        commonInit()
+        addSubview(popupView)
+        popupView.addSubview(updateImageView)
+        popupView.addSubview(headerTitle)
+        popupView.addSubview(descriptionLabel)
+        popupView.addSubview(updateButton)
+        popupView.addSubview(versionLabel)
+        setPopupViewConstraint()
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
+        setDescriptionConstraint()
         setButtonConstraint()
+        setVersionConstraint()
     }
     
     @objc
@@ -141,67 +146,131 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
         viewModel.openLink()
     }
     
-    public func setUpdateImageViewConstraint() {
-        updateImageView.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint(
-            item: updateImageView,
+    public func setPopupViewConstraint() {
+        popupView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(
+            item: popupView,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: self,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
-           NSLayoutConstraint(
-            item: updateImageView,
+        NSLayoutConstraint(
+            item: popupView,
             attribute: .centerY,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: self,
             attribute: .centerY,
             multiplier: 1,
-            constant: -150).isActive = true
-           NSLayoutConstraint(
+            constant: 0).isActive = true
+        popupView.leadingAnchor.constraint(
+            equalTo: self.leadingAnchor,
+            constant: 24).isActive = true
+        NSLayoutConstraint(
+            item: popupView,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1,
+            constant: 433).isActive = true
+    }
+    
+    public func setUpdateImageViewConstraint() {
+        updateImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(
+            item: updateImageView,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0).isActive = true
+        NSLayoutConstraint(
+            item: updateImageView,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .top,
+            multiplier: 1,
+            constant: 66).isActive = true
+        NSLayoutConstraint(
             item: updateImageView,
             attribute: .width,
             relatedBy: .equal,
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: 191).isActive = true
-           NSLayoutConstraint(
+            constant: 64).isActive = true
+        NSLayoutConstraint(
             item: updateImageView,
             attribute: .height,
             relatedBy: .equal,
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
-            constant: 139).isActive = true
+            constant: 63).isActive = true
     }
     
     public func setTitleViewConstraint() {
         headerTitle.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: headerTitle,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: popupView,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: headerTitle,
             attribute: .top,
             relatedBy: .equal,
             toItem: updateImageView,
             attribute: .bottom,
             multiplier: 1,
-            constant: 56).isActive = true
+            constant: 41).isActive = true
         
         headerTitle.leadingAnchor.constraint(
-            equalTo: contentView.leadingAnchor,
-            constant: 24).isActive = true
+            equalTo: popupView.leadingAnchor,
+            constant: 21).isActive = true
         
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: headerTitle,
+            attribute: .height,
+            relatedBy: .greaterThanOrEqual,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1,
+            constant: 30).isActive = true
+    }
+    
+    public func setDescriptionConstraint() {
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(
+            item: descriptionLabel,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0).isActive = true
+        NSLayoutConstraint(
+            item: descriptionLabel,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: headerTitle,
+            attribute: .bottom,
+            multiplier: 1,
+            constant: 10).isActive = true
+        
+        descriptionLabel.leadingAnchor.constraint(
+            equalTo: popupView.leadingAnchor,
+            constant: 21).isActive = true
+        
+        NSLayoutConstraint(
+            item: descriptionLabel,
             attribute: .height,
             relatedBy: .greaterThanOrEqual,
             toItem: nil,
@@ -212,23 +281,23 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
     
     public func setButtonConstraint() {
         updateButton.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: updateButton,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: popupView,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: updateButton,
             attribute: .top,
             relatedBy: .equal,
-            toItem: headerTitle,
+            toItem: descriptionLabel,
             attribute: .bottom,
             multiplier: 1,
-            constant: 62).isActive = true
-           NSLayoutConstraint(
+            constant: 50).isActive = true
+        NSLayoutConstraint(
             item: updateButton,
             attribute: .width,
             relatedBy: .equal,
@@ -236,7 +305,7 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
             constant: 222).isActive = true
-           NSLayoutConstraint(
+        NSLayoutConstraint(
             item: updateButton,
             attribute: .height,
             relatedBy: .equal,
@@ -244,5 +313,36 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
             attribute: .notAnAttribute,
             multiplier: 1,
             constant: 56).isActive = true
+    }
+    
+    public func setVersionConstraint() {
+        versionLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(
+            item: versionLabel,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0).isActive = true
+        NSLayoutConstraint(
+            item: versionLabel,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: updateButton,
+            attribute: .bottom,
+            multiplier: 1,
+            constant: 10).isActive = true
+        versionLabel.leadingAnchor.constraint(
+            equalTo: popupView.leadingAnchor,
+            constant: 24).isActive = true
+        NSLayoutConstraint(
+            item: versionLabel,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1,
+            constant: 20).isActive = true
     }
 }
