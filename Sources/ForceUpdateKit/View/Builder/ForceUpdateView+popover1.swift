@@ -207,7 +207,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: 191).isActive = true
+            constant: 64).isActive = true
         NSLayoutConstraint(
             item: updateImageView,
             attribute: .height,
@@ -215,7 +215,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
-            constant: 139).isActive = true
+            constant: 63).isActive = true
     }
     
     public func setTitleViewConstraint() {
