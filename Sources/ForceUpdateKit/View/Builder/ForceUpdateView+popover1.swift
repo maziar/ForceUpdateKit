@@ -38,7 +38,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
     lazy var popupView: UIView = {
         let popupView = UIView()
         popupView.backgroundColor = config.popupViewBackColor
-        popupView.alpha = 0.8
         popupView.setCurvedView(cornerRadius: 15.0)
         return popupView
     }()
@@ -133,7 +132,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        contentView.addSubview(popupView)
+        self.addSubview(popupView)
         popupView.addSubview(updateImageView)
         popupView.addSubview(headerTitle)
         popupView.addSubview(descriptionLabel)
@@ -157,7 +156,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             item: popupView,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: self,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
@@ -165,12 +164,12 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             item: popupView,
             attribute: .centerY,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: self,
             attribute: .centerY,
             multiplier: 1,
             constant: 0).isActive = true
         popupView.leadingAnchor.constraint(
-            equalTo: contentView.leadingAnchor,
+            equalTo: self.leadingAnchor,
             constant: 24).isActive = true
         NSLayoutConstraint(
             item: popupView,
