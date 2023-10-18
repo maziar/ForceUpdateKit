@@ -20,9 +20,8 @@ public class ForceUpdateViewConfig {
     public var contentBackGroundImage: UIImage = UIImage(named: "",
                                                          in: Bundle.module,
                                                          compatibleWith: nil) ?? UIImage()
-    public var updateImage: UIImage = UIImage(named: "update-icon",
-                                              in: Bundle.module,
-                                              compatibleWith: nil) ?? UIImage()
+    public var updateImageType: ImageType = .spaceship1
+    public var updateImage: UIImage?
     public var updateImageColor: UIColor?
     public var updateButtonFont = UIFont.systemFont(ofSize: 12, weight: .medium)
     
@@ -44,4 +43,10 @@ public class ForceUpdateViewConfig {
     public var updateButtonCornerRadius: CGFloat = 20.0
     public var updateButtonBorderWidth: CGFloat = 0.0
     public var updateButtonBorderColor: UIColor = .clear
+}
+
+public enum ImageType: String {
+    case spaceship1 = "update-icon"
+    case spaceship2 = "spaceship"
+    case gear = "gear"
 }

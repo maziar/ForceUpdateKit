@@ -43,10 +43,23 @@ public class ForceUpdateView_FullScreen4: UIView, ForceUpdateViewProtocol {
     lazy var updateImageView: UIImageView = {
         let updateImageView = UIImageView()
         if let color = config.updateImageColor {
-            let img = config.updateImage.imageWithColor(color: color)
-            updateImageView.image = img
+            if let img = config.updateImage?.imageWithColor(color: color) {
+                updateImageView.image = img
+            } else {
+                let img = UIImage(named: config.updateImageType.rawValue,
+                                  in: Bundle.module,
+                                  compatibleWith: nil)?.imageWithColor(color: color) ?? UIImage()
+                updateImageView.image = img
+            }
         } else {
-            updateImageView.image = config.updateImage
+            if let img = config.updateImage {
+                updateImageView.image = img
+            } else {
+                let img = UIImage(named: config.updateImageType.rawValue,
+                                  in: Bundle.module,
+                                  compatibleWith: nil) ?? UIImage()
+                updateImageView.image = img
+            }
         }
         return updateImageView
     }()
