@@ -35,6 +35,9 @@ public class FullScreenStyle1: ForceUpdateViewProtocol {
     }
     
     public func setupViewStyle(config: ForceUpdateViewConfig) {
+        contentView.addSubview(updateImageView)
+        contentView.addSubview(updateButton)
+        contentView.addSubview(descriptionLabel)
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
         setButtonConstraint()

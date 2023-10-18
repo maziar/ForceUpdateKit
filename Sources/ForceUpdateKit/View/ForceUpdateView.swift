@@ -152,9 +152,6 @@ public class ForceUpdateView: UIView {
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        contentView.addSubview(updateImageView)
-        contentView.addSubview(updateButton)
-        contentView.addSubview(descriptionLabel)
         commonInit()
         setupStyle()
     }
