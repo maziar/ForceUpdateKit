@@ -122,10 +122,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func commonInit() {
-        contentView.fixInView(self)
-    }
-    
     public func setup() {
         addSubview(contentView)
         contentView.fixInView(self)
@@ -136,7 +132,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         popupView.addSubview(headerTitle)
         popupView.addSubview(descriptionLabel)
         popupView.addSubview(updateButton)
-        commonInit()
         setPopupViewConstraint()
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
