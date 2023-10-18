@@ -11,6 +11,7 @@ public struct UpdateResponse: Codable {
     public var version: String?
     public let forceUpdate: Bool
     public var title: String?
+    public var description: String?
     public var iconUrl: String?
     public var linkUrl: String?
     public var buttonTitle: String?

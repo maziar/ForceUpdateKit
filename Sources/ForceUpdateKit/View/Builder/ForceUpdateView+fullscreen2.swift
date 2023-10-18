@@ -235,7 +235,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
             toItem: contentView,
             attribute: .bottom,
             multiplier: 1,
-            constant: 52).isActive = true
+            constant: 0).isActive = true
         versionLabel.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
