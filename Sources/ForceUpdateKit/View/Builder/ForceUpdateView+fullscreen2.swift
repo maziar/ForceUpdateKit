@@ -199,7 +199,7 @@ public struct FullScreenStyle2: ForceUpdateViewProtocol {
             toItem: versionLabel,
             attribute: .top,
             multiplier: 1,
-            constant: -62).isActive = true
+            constant: -10).isActive = true
         NSLayoutConstraint(
             item: updateButton,
             attribute: .width,

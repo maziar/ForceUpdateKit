@@ -132,9 +132,10 @@ public class ForceUpdateView: UIView {
                          config: ForceUpdateViewConfig = ForceUpdateViewConfig()) {
         self.config = config
         self.viewModel = viewModel
-        self.config.headerTitle = viewModel.response.title ?? String()
-        self.config.updateButtonNortmalTitle = viewModel.response.buttonTitle ?? String()
-        self.config.updateButtonSelectedTitle = viewModel.response.buttonTitle ?? String()
+        if let title = viewModel.response.title { self.config.headerTitle = title }
+        if let buttonTitle = viewModel.response.buttonTitle { self.config.updateButtonNortmalTitle = buttonTitle }
+        if let version = viewModel.response.version { self.config.versionText = version }
+        if let description = viewModel.response.description { self.config.descriptionText = description }
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         setup()
     }

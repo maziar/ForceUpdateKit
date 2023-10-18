@@ -19,11 +19,11 @@ public class ForceUpdateKit: Updatable {
             let viewModel = DefaultForceUpdateViewModel(response: response)
             let forceUpdateView = await ForceUpdateView(viewModel: viewModel,
                                                         config: config.viewConfig)
-            if response.forceUpdate {
+//            if response.forceUpdate {
                 let window = await UIApplication.shared.windows.last!
                 await window.addSubview(forceUpdateView)
                 await forceUpdateView.fixInView(window)
-            }
+//            }
         }
     }
 }
