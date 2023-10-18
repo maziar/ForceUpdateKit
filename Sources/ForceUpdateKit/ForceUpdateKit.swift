@@ -17,15 +17,15 @@ public class ForceUpdateKit: Updatable {
                                         route: config.route)
             let response = try await self.update(request: request)
             let viewModel = DefaultForceUpdateViewModel(response: response)
-            DispatchQueue.main.async {
-                let forceUpdateView = ForceUpdateViewStyle.make(viewModel: viewModel,
-                                                                config: config.viewConfig)
-                //            if response.forceUpdate {
-                let window = UIApplication.shared.windows.last!
-                window.addSubview(forceUpdateView)
-                forceUpdateView.fixInView(window)
-                //            }
-            }
+//            if response.forceUpdate {
+                DispatchQueue.main.async {
+                    let forceUpdateView = ForceUpdateViewStyle.make(viewModel: viewModel,
+                                                                    config: config.viewConfig)
+                    let window = UIApplication.shared.windows.last!
+                    window.addSubview(forceUpdateView)
+                    forceUpdateView.fixInView(window)
+                }
+//            }
         }
     }
 }

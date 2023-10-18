@@ -12,8 +12,11 @@ public class ForceUpdateViewConfig {
     public var style: ForceUpdateViewStyle = .fullscreen1
     public var updateButtonNortmalTitle: String = "Update New Version"
     public var updateButtonSelectedTitle: String = "Update New Version"
+    
     public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
+    
     public var contentViewBackColor: UIColor = .white
+    public var popupViewBackColor: UIColor = .black
     public var contentBackGroundImage: UIImage = UIImage(named: "",
                                                          in: Bundle.module,
                                                          compatibleWith: nil) ?? UIImage()

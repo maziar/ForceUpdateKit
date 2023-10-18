@@ -31,7 +31,15 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
     lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = config.contentViewBackColor
+        contentView.alpha = 0.8
         return contentView
+    }()
+    
+    lazy var popupView: UIView = {
+        let popupView = UIView()
+        popupView.backgroundColor = config.popupViewBackColor
+        popupView.alpha = 0.8
+        return popupView
     }()
     
     lazy var contentBackGroundImageView: UIImageView = {
@@ -81,12 +89,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         return versionLabel
     }()
     
-    lazy var line: UIView = {
-        let line = UIView()
-        line.backgroundColor = config.lineColor
-        return line
-    }()
-    
     public override func layoutSubviews() {
         super.layoutSubviews()
         contentView.setCurvedView(cornerRadius: 20)
@@ -117,12 +119,13 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        contentView.addSubview(updateImageView)
-        contentView.addSubview(headerTitle)
-        contentView.addSubview(descriptionLabel)
-        contentView.addSubview(updateButton)
-        contentView.addSubview(versionLabel)
+        contentView.addSubview(popupView)
+        popupView.addSubview(updateImageView)
+        popupView.addSubview(headerTitle)
+        popupView.addSubview(descriptionLabel)
+        popupView.addSubview(updateButton)
         commonInit()
+        setPopupViewConstraint()
         setUpdateImageViewConstraint()
         setTitleViewConstraint()
         setDescriptionConstraint()
@@ -135,10 +138,10 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         viewModel.openLink()
     }
     
-    public func setUpdateImageViewConstraint() {
-        updateImageView.translatesAutoresizingMaskIntoConstraints = false
+    public func setPopupViewConstraint() {
+        popupView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(
-            item: updateImageView,
+            item: popupView,
             attribute: .centerX,
             relatedBy: .equal,
             toItem: contentView,
@@ -146,13 +149,44 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             multiplier: 1,
             constant: 0).isActive = true
         NSLayoutConstraint(
-            item: updateImageView,
+            item: popupView,
             attribute: .centerY,
             relatedBy: .equal,
             toItem: contentView,
             attribute: .centerY,
             multiplier: 1,
-            constant: -200).isActive = true
+            constant: 0).isActive = true
+        popupView.leadingAnchor.constraint(
+            equalTo: contentView.leadingAnchor,
+            constant: 24).isActive = true
+        NSLayoutConstraint(
+            item: popupView,
+            attribute: .height,
+            relatedBy: .equal,
+            toItem: nil,
+            attribute: .notAnAttribute,
+            multiplier: 1,
+            constant: 433).isActive = true
+    }
+    
+    public func setUpdateImageViewConstraint() {
+        updateImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint(
+            item: updateImageView,
+            attribute: .centerX,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .centerX,
+            multiplier: 1,
+            constant: 0).isActive = true
+        NSLayoutConstraint(
+            item: updateImageView,
+            attribute: .top,
+            relatedBy: .equal,
+            toItem: popupView,
+            attribute: .top,
+            multiplier: 1,
+            constant: 66).isActive = true
         NSLayoutConstraint(
             item: updateImageView,
             attribute: .width,
@@ -177,7 +211,7 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             item: headerTitle,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: popupView,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
@@ -188,11 +222,11 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             toItem: updateImageView,
             attribute: .bottom,
             multiplier: 1,
-            constant: 31).isActive = true
+            constant: 41).isActive = true
         
         headerTitle.leadingAnchor.constraint(
-            equalTo: contentView.leadingAnchor,
-            constant: 24).isActive = true
+            equalTo: popupView.leadingAnchor,
+            constant: 21).isActive = true
         
         NSLayoutConstraint(
             item: headerTitle,
@@ -221,11 +255,11 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             toItem: headerTitle,
             attribute: .bottom,
             multiplier: 1,
-            constant: 16).isActive = true
+            constant: 10).isActive = true
         
         descriptionLabel.leadingAnchor.constraint(
-            equalTo: contentView.leadingAnchor,
-            constant: 24).isActive = true
+            equalTo: popupView.leadingAnchor,
+            constant: 21).isActive = true
         
         NSLayoutConstraint(
             item: descriptionLabel,
@@ -243,18 +277,18 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             item: updateButton,
             attribute: .centerX,
             relatedBy: .equal,
-            toItem: contentView,
+            toItem: popupView,
             attribute: .centerX,
             multiplier: 1,
             constant: 0).isActive = true
         NSLayoutConstraint(
             item: updateButton,
-            attribute: .bottom,
-            relatedBy: .equal,
-            toItem: versionLabel,
             attribute: .top,
+            relatedBy: .equal,
+            toItem: descriptionLabel,
+            attribute: .bottom,
             multiplier: 1,
-            constant: -10).isActive = true
+            constant: 50).isActive = true
         NSLayoutConstraint(
             item: updateButton,
             attribute: .width,
