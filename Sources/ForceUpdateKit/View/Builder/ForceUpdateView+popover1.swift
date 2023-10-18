@@ -104,7 +104,6 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.setCurvedView(cornerRadius: 20)
     }
     
     public required init(viewModel: ForceUpdateViewModel,
@@ -132,7 +131,8 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
         contentView.fixInView(self)
         contentView.addSubview(contentBackGroundImageView)
         contentBackGroundImageView.fixInView(contentView)
-        self.addSubview(popupView)
+        addSubview(popupView)
+        popupView.bringSubviewToFront(self)
         popupView.addSubview(updateImageView)
         popupView.addSubview(headerTitle)
         popupView.addSubview(descriptionLabel)
@@ -317,36 +317,5 @@ public class ForceUpdateView_Popover1: UIView, ForceUpdateViewProtocol {
             attribute: .notAnAttribute,
             multiplier: 1,
             constant: 56).isActive = true
-    }
-    
-    public func setVersionConstraint() {
-        versionLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint(
-            item: versionLabel,
-            attribute: .centerX,
-            relatedBy: .equal,
-            toItem: contentView,
-            attribute: .centerX,
-            multiplier: 1,
-            constant: 0).isActive = true
-        NSLayoutConstraint(
-            item: versionLabel,
-            attribute: .bottom,
-            relatedBy: .equal,
-            toItem: contentView,
-            attribute: .bottom,
-            multiplier: 1,
-            constant: -52).isActive = true
-        versionLabel.leadingAnchor.constraint(
-            equalTo: contentView.leadingAnchor,
-            constant: 24).isActive = true
-        NSLayoutConstraint(
-            item: versionLabel,
-            attribute: .height,
-            relatedBy: .equal,
-            toItem: nil,
-            attribute: .notAnAttribute,
-            multiplier: 1,
-            constant: 20).isActive = true
     }
 }
