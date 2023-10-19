@@ -18,6 +18,56 @@
 *  ***Variety*** of style and configuration.
 *  ***Compatible*** with all platforms
 
+
+## Installation
+* Manually
+* Cocoapods
+* SPM (Swift Package Manager)
+
+### Manually
+1. ***[Download](#)*** the source code.
+2. Extract the zip file, simply drag folder ***Sources*** into your project.
+3. Make sure ***Copy items if needed*** is checked.
+
+### Cocoapods
+```ruby
+use_frameworks!
+target '<Your Target Name>' do
+    pod 'ForceUpdateKit'
+end
+```
+https://cocoapods.org/pods/ForceUpdateKit
+
+
+### Swift Package Manager
+
+[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+To integrate ForceUpdateKit into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/maziar/ForceUpdateKit.git")
+]
+```
+
+
+## Tutorial
+* [Getting started](#getting_started)
+
+### 1. Getting started <a id='getting_started'></a>
+
+* Getting started with code
+
+in Appdelegate or SceneDelegate or wherever you need it you can call:
+```swift
+import ForceUpdateKit
+
+Task {
+    await ForceUpdateKit().configure()
+ }
+```
+
 ## Demos
 * [Demo1 - FullScreen1](#fullscreen1)
 * [Demo2 - FullScreen2](#fullscreen2)
@@ -259,51 +309,3 @@ Task {
 
 ```
 
-## Installation
-* Manually
-* Cocoapods
-* SPM (Swift Package Manager)
-
-### Manually
-1. ***[Download](#)*** the source code.
-2. Extract the zip file, simply drag folder ***Sources*** into your project.
-3. Make sure ***Copy items if needed*** is checked.
-
-### Cocoapods
-```ruby
-use_frameworks!
-target '<Your Target Name>' do
-    pod 'ForceUpdateKit'
-end
-```
-https://cocoapods.org/pods/ForceUpdateKit
-
-
-### Swift Package Manager
-
-[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
-
-To integrate ForceUpdateKit into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/maziar/ForceUpdateKit.git")
-]
-```
-
-
-## Tutorial
-* [Getting started](#getting_started)
-
-### 1. Getting started <a id='getting_started'></a>
-
-* Getting started with code
-
-in Appdelegate or SceneDelegate or wherever you need it you can call:
-```swift
-import ForceUpdateKit
-
-Task {
-    await ForceUpdateKit().configure()
- }
-```
