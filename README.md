@@ -177,8 +177,24 @@ Task {
  }
 ```
 
+
+## Service Configuration
+this is the default value ***Service configuration*** class that you configure all items that you want custom:
+
+public struct UpdateServiceConfig {
+    public var route: String = "https://my.api.mockaroo.com/forceupdate.json?key=2202ab40"
+    public var appId: String = Bundle.main.bundleIdentifier ?? String()
+    public var version: String = Bundle.main.releaseVersionNumber ?? String()
+    public var viewConfig: ForceUpdateViewConfig = ForceUpdateViewConfig()
+}
+
+that you can define or pass a new value for the route or use the default for using from our service.
+
+
+
 ## View and Style Configuration
-this is the default value configuration class that you configure all items that you want custom:
+this is the default value for ***View configuration*** class that you configure all items that you want custom:
+
 
 ```
 public class ForceUpdateViewConfig {
