@@ -46,15 +46,18 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
             if let img = config.updateImage?.imageWithColor(color: color) {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue)?
-                    .imageWithColor(color: color) ?? UIImage()
+                let img = UIImage(named: config.updateImageType.rawValue,
+                                  in: Bundle.module,
+                                  compatibleWith: nil)?.imageWithColor(color: color) ?? UIImage()
                 updateImageView.image = img
             }
         } else {
             if let img = config.updateImage {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue) ?? UIImage()
+                let img = UIImage(named: config.updateImageType.rawValue,
+                                  in: Bundle.module,
+                                  compatibleWith: nil) ?? UIImage()
                 updateImageView.image = img
             }
         }
