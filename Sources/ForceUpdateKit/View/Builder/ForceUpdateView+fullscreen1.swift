@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+
 public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
     var config: ForceUpdateViewConfig
     var viewModel: ForceUpdateViewModel
@@ -45,18 +46,15 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
             if let img = config.updateImage?.imageWithColor(color: color) {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue,
-                                  in: Bundle.module,
-                                  compatibleWith: nil)?.imageWithColor(color: color) ?? UIImage()
+                let img = UIImage(named: config.updateImageType.rawValue)?
+                    .imageWithColor(color: color) ?? UIImage()
                 updateImageView.image = img
             }
         } else {
             if let img = config.updateImage {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue,
-                                  in: Bundle.module,
-                                  compatibleWith: nil) ?? UIImage()
+                let img = UIImage(named: config.updateImageType.rawValue) ?? UIImage()
                 updateImageView.image = img
             }
         }
