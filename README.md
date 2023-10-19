@@ -114,7 +114,7 @@ Task {
     await ForceUpdateKit().configure(config: config)
  }
 ```
-| <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover1-backclear.png' width='200'>
+ <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover1-backclear.png' width='200'>
 
 ```swift
 Task {
@@ -152,7 +152,7 @@ Task {
     await ForceUpdateKit().configure(config: config)
  }
 ```
-| <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover2-backclear.png' width='200'>
+ <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover2-backclear.png' width='200'>
 
 ```swift
 Task {
