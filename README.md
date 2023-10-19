@@ -9,8 +9,7 @@
 [![Version](https://img.shields.io/cocoapods/v/FSPagerView.svg?style=plastic)](http://cocoadocs.org/docsets/FSPagerView) 
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-FF9966.svg?style=plastic)](https://swift.org/package-manager/)
 
-|<b>SWIFT</b>|
-|---|---|
+|<b>SWIFT</b>
 
 **ForceUpdateKit** This repo is for checking the force update of app and handle the force update flow.
 
