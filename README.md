@@ -192,6 +192,15 @@ public struct UpdateServiceConfig {
 
 that you can define or pass a new value for the route or use the default for using from our service.
 
+**e.g.**
+
+```swift
+Task {
+    let config = UpdateServiceConfig()
+    config.route = "https://myapi.enpoint/forceupdate"
+    await ForceUpdateKit().configure(config: config)
+ }
+```
 
 
 ## View and Style Configuration
