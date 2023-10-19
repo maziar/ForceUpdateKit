@@ -11,11 +11,6 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '13.0'
 
   spec.source_files = 'Sources/*.swift', 'Sources/**/*.swift', 'Sources/**/**/*.swift',
-
-  spec.xcconfig = {
-      'LIBRARY_SEARCH_PATHS' => '$(SDKROOT)/usr/lib/swift',
-  }
-
   spec.swift_versions = ['5.0']
   spec.author = { "Maziar Saadatfar" => "maziar.saadatfar@gmail.com" }
 
