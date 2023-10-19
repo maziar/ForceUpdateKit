@@ -23,12 +23,12 @@
 *  Support **SWIFT** and **OBJECTIVE-C**.
 
 ## Demos
-* [Demo1 - FullScreen1](#.fullscreen1)
-* [Demo2 - FullScreen2](#.fullscreen2)
-* [Demo3 - FullScreen3](#.fullscreen3)
-* [Demo4 - FullScreen4](#.fullscreen4)
-* [Demo5 - Popover1](#.popover1)
-* [Demo6 - Popover2](#.popover2)
+* [Demo1 - FullScreen1](#fullscreen1)
+* [Demo2 - FullScreen2](#fullscreen2)
+* [Demo3 - FullScreen3](#fullscreen3)
+* [Demo4 - FullScreen4](#fullscreen4)
+* [Demo5 - Popover1](#popover1)
+* [Demo6 - Popover2](#popover2)
 
 ### Demo1 - FullScreen1 <a id="fullscreen1"></a>
 
