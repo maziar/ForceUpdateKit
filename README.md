@@ -9,19 +9,14 @@
 [![Version](https://img.shields.io/cocoapods/v/FSPagerView.svg?style=plastic)](http://cocoadocs.org/docsets/FSPagerView) 
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-FF9966.svg?style=plastic)](https://swift.org/package-manager/)
 
-|<b>SWIFT</b>
+<b>SWIFT</b>
 
 **ForceUpdateKit** This repo is for checking the force update of app and handle the force update flow.
 
 ## Features
-*  ***Infinite*** scrolling.
-*  ***Automatic*** Sliding.
-*  ***Horizontal*** and ***Vertical*** paging.
-*  Fully customizable item, with predefined banner-style item.
-*  Fully customizable ***page control***.
-*  Rich build-in 3D transformers.
-*  ***Simple*** and ***Delightful*** api usage.
-*  Support **SWIFT** and **OBJECTIVE-C**.
+*  *** Force Update *** without implementing server and client
+*  *** Variety *** of style and configuration.
+*  *** Compatible *** with all platforms
 
 ## Demos
 * [Demo1 - FullScreen1](#fullscreen1)
