@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ForceUpdateKit"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "A short description of ForceUpdateKit."
 
   spec.license = 'MIT'
@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.ios.deployment_target = '13.0'
 
-  spec.source_files = 'Sources/*.swift'
+  spec.source_files = 'Sources/*.swift', 'Sources/**/*.swift', 'Sources/**/**/*.swift',
 
   spec.xcconfig = {
       'LIBRARY_SEARCH_PATHS' => '$(SDKROOT)/usr/lib/swift',
