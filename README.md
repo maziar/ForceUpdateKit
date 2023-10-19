@@ -34,7 +34,7 @@
 
 | FullScreen1 |
 |---|
-|![img|20%](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen1.png)
+|<img src='https://github.com/maziar/ReadmeFiles/blob/main/fullscreen1.png' width='100'>
 
 **e.g.**
 
