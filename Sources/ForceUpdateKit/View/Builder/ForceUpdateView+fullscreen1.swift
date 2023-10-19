@@ -46,14 +46,14 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
             if let img = config.updateImage?.imageWithColor(color: color) {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue)?.imageWithColor(color: color) ?? UIImage()
+                let img = ImageHelper.image(config.updateImageType.rawValue)?.imageWithColor(color: color)
                 updateImageView.image = img
             }
         } else {
             if let img = config.updateImage {
                 updateImageView.image = img
             } else {
-                let img = UIImage(named: config.updateImageType.rawValue) ?? UIImage()
+                let img = ImageHelper.image(config.updateImageType.rawValue)
                 updateImageView.image = img
             }
         }
@@ -240,33 +240,13 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
     }
 }
 
-//
-//import class Foundation.Bundle
-//
-//private class BundleFinder {}
-//
-//extension Foundation.Bundle {
-//    /// Returns the resource bundle associated with the current Swift module.
-//    static var module: Bundle = {
-//        let bundleName = "ForceUpdateKit"
-//
-//        let candidates = [
-//            // Bundle should be present here when the package is linked into an App.
-//            Bundle.main.resourceURL,
-//
-//            // Bundle should be present here when the package is linked into a framework.
-//            Bundle(for: BundleFinder.self).resourceURL,
-//
-//            // For command-line tools.
-//            Bundle.main.bundleURL,
-//        ]
-//
-//        for candidate in candidates {
-//            let bundlePath = candidate?.appendingPathComponent(bundleName + ".bundle")
-//            if let bundle = bundlePath.flatMap(Bundle.init(url:)) {
-//                return bundle
-//            }
-//        }
-//        fatalError("unable to find bundle named ForceUpdateKit")
-//    }()
-//}
+class ImageHelper {
+    static func image(_ name: String) -> UIImage? {
+        let podBundle = Bundle(for: ImageHelper.self)
+        if let url = podBundle.url(forResource: "ForceUpdateKit", withExtension: "bundle") {
+            let bundle = Bundle(url: url)
+            return UIImage(named: name, in: bundle, compatibleWith: nil)
+        }
+        return UIImage()
+    }
+}

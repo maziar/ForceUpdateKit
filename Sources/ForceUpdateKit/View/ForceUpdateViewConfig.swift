@@ -20,9 +20,7 @@ public class ForceUpdateViewConfig {
     public var popupViewBackColor: UIColor = .black
     public var popupViewCornerRadius: CGFloat = 15.0
     
-    public var contentBackGroundImage: UIImage = UIImage(named: "",
-                                                         in: Bundle.module,
-                                                         compatibleWith: nil) ?? UIImage()
+    public var contentBackGroundImage = UIImage()
     public var updateImageType: ImageType = .spaceship1
     public var updateImage: UIImage?
     public var updateImageColor: UIColor?

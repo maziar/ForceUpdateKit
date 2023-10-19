@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'ForceUpdateKit'
-  spec.version      = '0.0.5'
+  spec.version      = '0.0.6'
   spec.summary      = 'A short description of ForceUpdateKit.'
 
   spec.license = 'MIT'
@@ -10,4 +10,5 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '13.0'
   spec.source_files = 'Sources/*.swift', 'Sources/**/*.swift', 'Sources/**/**/*.swift'
   spec.authors = { 'Maziar Saadatfar' => 'maziar.saadatfar@gmail.com' }
+  spec.swift_versions = ['4.0']
 end
