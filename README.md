@@ -178,8 +178,7 @@ Task {
 ```
 
 ## View and Style Configuration
-
-# this is configure class that you configure all item that you want custom that:
+this is the default value configuration class that you configure all items that you want custom:
 
 ```
 public class ForceUpdateViewConfig {
