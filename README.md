@@ -36,9 +36,7 @@
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .fullscreen1
-    await ForceUpdateKit().configure(config: config)
+    await ForceUpdateKit().configure()
  }
 ```
 
