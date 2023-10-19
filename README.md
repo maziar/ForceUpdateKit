@@ -176,3 +176,61 @@ Task {
     await ForceUpdateKit().configure(config: config)
  }
 ```
+
+## View and Style Configuration
+
+# this is configure class that you configure all item that you want custom that:
+
+```
+public class ForceUpdateViewConfig {
+    public var style: ForceUpdateViewStyle = .fullscreen1
+    public var updateButtonNortmalTitle: String = "Update New Version"
+    public var updateButtonSelectedTitle: String = "Update New Version"
+    public var updateButtonImage: UIImage = UIImage(named: "") ?? UIImage()
+    public var contentViewBackColor: UIColor = .white
+    public var popupViewBackColor: UIColor = .black
+    public var popupViewCornerRadius: CGFloat = 15.0
+    public var contentBackGroundImage: UIImage = UIImage(named: "",
+                                                         in: Bundle.module,
+                                                         compatibleWith: nil) ?? UIImage()
+    public var updateImageType: ImageType = .spaceship1
+    public var updateImage: UIImage?
+    public var updateImageColor: UIColor?
+    public var updateButtonFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+    public var headerTitleFont = UIFont.systemFont(ofSize: 13, weight: .bold)
+    public var headerTitle = "It's time to update"
+    public var headerTitleColor: UIColor = .black
+    public var descriptionFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+    public var descriptionText = "It's time to update The version you are using is old, need to update the latest version in order to experience new features."
+    public var descriptionTextColor: UIColor = .gray
+    public var versionFont = UIFont.systemFont(ofSize: 10, weight: .bold)
+    public var versionText = "Up to 12.349 version Apr 2024."
+    public var versionTextColor: UIColor = .gray
+    public var updateButtonBackColor: UIColor = .blue
+    public var lineColor: UIColor = .lightGray
+    public var updateButtonTitleColor: UIColor = .white
+    public var updateButtonCornerRadius: CGFloat = 20.0
+    public var updateButtonBorderWidth: CGFloat = 0.0
+    public var updateButtonBorderColor: UIColor = .clear
+}
+```
+**e.g.**
+```
+Task {
+    let config = UpdateServiceConfig()
+    config.viewConfig.style = .popover2
+    config.viewConfig.contentViewBackColor = .clear
+    config.viewConfig.popupViewBackColor = .black
+    config.viewConfig.headerTitle = "my header title"
+    config.viewConfig.updateButtonCornerRadius = 30
+    config.viewConfig.updateButtonBorderWidth = 1
+    config.viewConfig.updateButtonBorderColor = .yellow
+    config.viewConfig.headerTitleColor = .white
+    config.viewConfig.updateImageType = .gear
+    config.viewConfig.updateImageColor = .orange
+    config.viewConfig.updateButtonBackColor = .orange
+    config.viewConfig.versionTextColor = .orange
+    await ForceUpdateKit().configure(config: config)
+ }
+
+```
