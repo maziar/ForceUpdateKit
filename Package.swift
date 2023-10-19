@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "ForceUpdateKit",
-            resources: [.copy("Resources")]
+            resources: [.process("Resources")]
         ),
         .testTarget(
             name: "ForceUpdateKitTests",
