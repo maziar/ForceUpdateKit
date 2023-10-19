@@ -276,6 +276,9 @@ target '<Your Target Name>' do
     pod 'ForceUpdateKit'
 end
 ```
+https://cocoapods.org/pods/ForceUpdateKit
+
+
 ### Swift Package Manager
 
 [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
