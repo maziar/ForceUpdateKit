@@ -276,6 +276,18 @@ target '<Your Target Name>' do
     pod 'ForceUpdateKit'
 end
 ```
+### Swift Package Manager
+
+[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
+
+To integrate ForceUpdateKit into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/maziar/ForceUpdateKit.git")
+]
+```
+
 
 ## Tutorial
 * [Getting started](#getting_started)
@@ -291,16 +303,4 @@ import ForceUpdateKit
 Task {
     await ForceUpdateKit().configure()
  }
-```
-
-### Swift Package Manager
-
-[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. It’s integrated with the Swift build system to automate the process of downloading, compiling, and linking dependencies.
-
-To integrate ForceUpdateKit into your Xcode project using Swift Package Manager, add it to the dependencies value of your `Package.swift`:
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/maziar/ForceUpdateKit.git")
-]
 ```
