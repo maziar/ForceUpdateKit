@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "ForceUpdateKit"
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "A short description of ForceUpdateKit."
 
   spec.license = 'MIT'
