@@ -49,6 +49,8 @@ Task {
 |---|
 | <img src='https://github.com/maziar/ReadmeFiles/blob/main/fullscreen2.png' width='200'>
 
+**e.g.**
+
 ```swift
 Task {
     let config = UpdateServiceConfig()
@@ -63,6 +65,8 @@ Task {
 | FullScreen3 |
 |---|
 | <img src='https://github.com/maziar/ReadmeFiles/blob/main/fullscreen3.png' width='200'>
+
+**e.g.**
 
 ```swift
 Task {
@@ -79,6 +83,8 @@ Task {
 |---|
 | <img src='https://github.com/maziar/ReadmeFiles/blob/main/fullscreen4.png' width='200'>
 
+**e.g.**
+
 ```swift
 Task {
     let config = UpdateServiceConfig()
@@ -93,6 +99,8 @@ Task {
 | Popover1 |
 |---|
 | <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover1.png' width='200'>
+
+**e.g.**
 
 ```swift
 Task {
@@ -109,6 +117,8 @@ Task {
  }
 ```
  <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover1-backclear.png' width='200'>
+
+**e.g.**
 
 ```swift
 Task {
@@ -132,6 +142,8 @@ Task {
 |---|
 | <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover2.png' width='200'>
 
+**e.g.**
+
 ```swift
 Task {
     let config = UpdateServiceConfig()
@@ -147,6 +159,8 @@ Task {
  }
 ```
  <img src='https://github.com/maziar/ReadmeFiles/blob/main/popover2-backclear.png' width='200'>
+
+**e.g.**
 
 ```swift
 Task {
