@@ -34,7 +34,7 @@
 
 | FullScreen1 |
 |---|
-|![9](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen1.png) |
+|![9](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen1.png) | width=100
 
 **e.g.**
 
@@ -51,7 +51,7 @@ Task {
 
 | FullScreen2 |
 |---|
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen2.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen2.png) | width=100
 
 ```swift
 Task {
@@ -66,7 +66,7 @@ Task {
 
 | FullScreen3 |
 |---|
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen3.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen3.png) | width=100
 
 ```swift
 Task {
@@ -81,7 +81,7 @@ Task {
 
 | FullScreen4 |
 |---|
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen4.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/fullscreen4.png) | width=100
 
 ```swift
 Task {
@@ -96,7 +96,7 @@ Task {
 
 | Popover1 |
 |---|
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/Popover1.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/Popover1.png) | width=100
 
 ```swift
 Task {
@@ -112,7 +112,7 @@ Task {
     await ForceUpdateKit().configure(config: config)
  }
 ```
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/popover1-backclear.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/popover1-backclear.png) | width=100
 
 ```swift
 Task {
@@ -134,7 +134,7 @@ Task {
 
 | Popover2 |
 |---|
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/Popover2.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/Popover2.png) | width=100
 
 ```swift
 Task {
@@ -150,7 +150,7 @@ Task {
     await ForceUpdateKit().configure(config: config)
  }
 ```
-| ![1](https://github.com/maziar/ReadmeFiles/blob/main/popover2-backclear.png) |
+| ![1](https://github.com/maziar/ReadmeFiles/blob/main/popover2-backclear.png) | width=100
 
 ```swift
 Task {
