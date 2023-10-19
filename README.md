@@ -14,9 +14,9 @@
 **ForceUpdateKit** This repo is for checking the force update of app and handle the force update flow.
 
 ## Features
-*  *** Force Update *** without implementing server and client
-*  *** Variety *** of style and configuration.
-*  *** Compatible *** with all platforms
+*  ***Force Update*** without implementing server and client
+*  ***Variety*** of style and configuration.
+*  ***Compatible*** with all platforms
 
 ## Demos
 * [Demo1 - FullScreen1](#fullscreen1)
