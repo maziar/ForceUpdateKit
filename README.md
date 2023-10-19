@@ -1,6 +1,6 @@
 # ForceUpdateKit
 
-![ForceUpdateKit]()
+![ForceUpdateKit] <img src='https://github.com/maziar/ReadmeFiles/blob/main/imgpsh_fullsize_anim.jpeg' width='200'>
 
 [![Languages](https://img.shields.io/badge/language-swift%205.0%20|%20objc-FF69B4.svg?style=plastic)](#) <br/>
 [![Platform](https://img.shields.io/badge/platform-iOS%20|%20tvOS-blue.svg?style=plastic)](http://cocoadocs.org/docsets/FSPagerView)
