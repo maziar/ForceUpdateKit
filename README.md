@@ -250,6 +250,30 @@ Task {
  }
 ```
 
+If you change the API endpoint for calling your server you should make the response that is expected from the Kit:
+
+```
+public struct UpdateResponse: Codable {
+    public var version: String?
+    public let forceUpdate: Bool
+    public var title: String?
+    public var description: String?
+    public var iconUrl: String?
+    public var linkUrl: String?
+    public var buttonTitle: String?
+}
+
+{
+  "version": "1.0.3",
+  "forceUpdate": true,
+  "title": "Dormand",
+  "description": "Cheyenne Autumn",
+  "iconUrl": "http://dummyimage.com/231x100.png/5fa2dd/ffffff",
+  "linkUrl": "https://accuweather.com/luctus/rutrum/nulla/tellus.png",
+  "buttonTitle": "Born Yesterday"
+}
+```
+
 
 ## View and Style Configuration
 this is the default value for ***View configuration*** class that you configure all items that you want custom:
