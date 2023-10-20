@@ -25,7 +25,7 @@
 * SPM (Swift Package Manager)
 
 ### Manually
-1. ***[Download]([#]https://github.com/maziar/ForceUpdateKit/archive/refs/heads/main.zip)*** the source code.
+1. ***[Download](https://github.com/maziar/ForceUpdateKit/archive/refs/heads/main.zip)*** the source code.
 2. Extract the zip file, simply drag folder ***Sources*** into your project.
 3. Make sure ***Copy items if needed*** is checked.
 
