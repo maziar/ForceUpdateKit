@@ -10,5 +10,5 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '13.0'
   spec.source_files = 'Sources/*.swift', 'Sources/**/*.swift', 'Sources/**/**/*.swift'
   spec.authors = { 'Maziar Saadatfar' => 'maziar.saadatfar@gmail.com' }
-  spec.swift_versions = ['4.0']
+  spec.swift_versions = ['5.0']
 end
