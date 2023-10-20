@@ -254,13 +254,13 @@ If you change the API endpoint for calling your server you should make the respo
 
 ```
 {
-  "version": "1.0.3",
+  "version": "Up to 12.349 version Apr 2024.",
   "forceUpdate": true,
-  "title": "Dormand",
-  "description": "Cheyenne Autumn",
-  "iconUrl": "http://dummyimage.com/231x100.png/5fa2dd/ffffff",
-  "linkUrl": "https://accuweather.com/luctus/rutrum/nulla/tellus.png",
-  "buttonTitle": "Born Yesterday"
+  "title": "It's time to update",
+  "description": "It's time to update The version you are using is old, need to update to the latest version in order to experience new features.",
+  "iconUrl": "http://dummyimage.com/231x100.png/5fa2dd/ffffff.png",
+  "linkUrl": "https://apps.apple.com/us/app/telegram/id747648890",
+  "buttonTitle": "Update New Version"
 }
 ```
 
