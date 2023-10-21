@@ -240,16 +240,20 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
     }
 }
 
+
+
 class ImageHelper {
+    static var resolvedBundle: Bundle {
+#if SWIFT_PACKAGE
+        return Bundle.module
+#else
+        return Bundle(for: self)
+#endif
+    }
+    
     static func image(_ name: String) -> UIImage? {
-        let podBundle = Bundle(for: ImageHelper.self)
-        if let url = podBundle.url(forResource: "ForceUpdateKit_ForceUpdateKit", withExtension: "bundle") {
-            let bundle = Bundle(url: url)
-            return UIImage(named: name, in: bundle, compatibleWith: nil)
-        } else {
-            return UIImage(named: name,
-                           in: Bundle(for: ImageHelper.self),
-                           compatibleWith: nil)
-        }
+        return UIImage(named: name,
+                       in: resolvedBundle,
+                       compatibleWith: nil)
     }
 }

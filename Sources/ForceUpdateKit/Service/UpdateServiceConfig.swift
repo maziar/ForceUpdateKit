@@ -12,4 +12,5 @@ public struct UpdateServiceConfig {
     public var appId: String = Bundle.main.bundleIdentifier ?? String()
     public var version: String = Bundle.main.releaseVersionNumber ?? String()
     public var viewConfig: ForceUpdateViewConfig = ForceUpdateViewConfig()
+    public var language: String = "en"
 }
