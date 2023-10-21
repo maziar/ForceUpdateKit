@@ -9,6 +9,7 @@ Pod::Spec.new do |spec|
   spec.source = { :git => 'https://github.com/maziar/ForceupdateKit.git', :tag => "#{spec.version}" }
   spec.ios.deployment_target = '13.0'
   spec.source_files = 'Sources/*.swift', 'Sources/**/*.swift', 'Sources/**/**/*.swift'
+  spec.resources = 'Sources/ForceUpdateKit/Resources/*.xcassets'
   spec.authors = { 'Maziar Saadatfar' => 'maziar.saadatfar@gmail.com' }
   spec.swift_versions = ['5.0']
 end
