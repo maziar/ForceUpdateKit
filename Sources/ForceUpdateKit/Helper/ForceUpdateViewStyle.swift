@@ -38,4 +38,21 @@ public enum ForceUpdateViewStyle {
                                             config: config)
         }
     }
+    
+    public static func getViewConfigWithStyle(style: ForceUpdateViewStyle) -> ForceUpdateViewConfig {
+        switch style {
+        case .fullscreen1:
+            FullScreen1ForceUpdateViewConfig()
+        case .fullscreen2:
+            FullScreen2ForceUpdateViewConfig()
+        case .fullscreen3:
+            FullScreen3ForceUpdateViewConfig()
+        case .fullscreen4:
+            FullScreen4ForceUpdateViewConfig()
+        case .popover1:
+            Popover1ForceUpdateViewConfig()
+        case .popover2:
+            Popover2ForceUpdateViewConfig()
+        }
+    }
 }

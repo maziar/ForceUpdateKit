@@ -103,7 +103,7 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
     }
     
     public required init(viewModel: ForceUpdateViewModel,
-                         config: ForceUpdateViewConfig = ForceUpdateViewConfig()) {
+                         config: ForceUpdateViewConfig = Popover2ForceUpdateViewConfig()) {
         self.config = config
         self.viewModel = viewModel
         if let title = viewModel.response.title { self.config.headerTitle = title }
@@ -340,5 +340,19 @@ public class ForceUpdateView_Popover2: UIView, ForceUpdateViewProtocol {
             attribute: .notAnAttribute,
             multiplier: 1,
             constant: 20).isActive = true
+    }
+}
+
+public class Popover2ForceUpdateViewConfig: ForceUpdateViewConfig {
+    public override init() {
+        super.init()
+        style = .popover2
+        contentViewBackColor = .black
+        popupViewBackColor = .black
+        headerTitleColor = .white
+        updateImageType = .gear
+        updateImageColor = .orange
+        updateButtonBackColor = .orange
+        versionTextColor = .orange
     }
 }

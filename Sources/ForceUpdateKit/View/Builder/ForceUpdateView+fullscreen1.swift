@@ -96,7 +96,7 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
     }
     
     public required init(viewModel: ForceUpdateViewModel,
-                         config: ForceUpdateViewConfig = ForceUpdateViewConfig()) {
+                         config: ForceUpdateViewConfig = FullScreen1ForceUpdateViewConfig()) {
         self.config = config
         self.viewModel = viewModel
         if let title = viewModel.response.title { self.config.headerTitle = title }
@@ -240,7 +240,12 @@ public class ForceUpdateView_FullScreen1: UIView, ForceUpdateViewProtocol {
     }
 }
 
-
+public class FullScreen1ForceUpdateViewConfig: ForceUpdateViewConfig {
+    public override init() {
+        super.init()
+        style = .fullscreen1
+    }
+}
 
 class ImageHelper {
     static var resolvedBundle: Bundle {

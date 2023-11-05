@@ -307,3 +307,9 @@ public class ForceUpdateView_FullScreen3: UIView, ForceUpdateViewProtocol {
             constant: 20).isActive = true
     }
 }
+public class FullScreen3ForceUpdateViewConfig: ForceUpdateViewConfig {
+    public override init() {
+        super.init()
+        style = .fullscreen3
+    }
+}
