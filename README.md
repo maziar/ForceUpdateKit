@@ -101,8 +101,7 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .fullscreen2
+    let config = UpdateServiceConfig(style: .fullscreen2)
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -118,8 +117,7 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .fullscreen3
+    let config = UpdateServiceConfig(style: .fullscreen3)
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -135,8 +133,7 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .fullscreen4
+    let config = UpdateServiceConfig(style: .fullscreen4)
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -152,15 +149,7 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .popover1
-    config.viewConfig.contentViewBackColor = .black
-    config.viewConfig.popupViewBackColor = .black
-    config.viewConfig.headerTitleColor = .white
-    config.viewConfig.updateImageType = .gear
-    config.viewConfig.updateImageColor = .orange
-    config.viewConfig.updateButtonBackColor = .orange
-    config.viewConfig.versionTextColor = .orange
+    let config = UpdateServiceConfig(style: .popover1)
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -170,15 +159,8 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .popover1
+    let config = UpdateServiceConfig(style: .popover1)
     config.viewConfig.contentViewBackColor = .clear
-    config.viewConfig.popupViewBackColor = .black
-    config.viewConfig.headerTitleColor = .white
-    config.viewConfig.updateImageType = .gear
-    config.viewConfig.updateImageColor = .orange
-    config.viewConfig.updateButtonBackColor = .orange
-    config.viewConfig.versionTextColor = .orange
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -194,15 +176,7 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .popover2
-    config.viewConfig.contentViewBackColor = .black
-    config.viewConfig.popupViewBackColor = .black
-    config.viewConfig.headerTitleColor = .white
-    config.viewConfig.updateImageType = .gear
-    config.viewConfig.updateImageColor = .orange
-    config.viewConfig.updateButtonBackColor = .orange
-    config.viewConfig.versionTextColor = .orange
+    let config = UpdateServiceConfig(style: .popover2)
     await ForceUpdateKit().configure(config: config)
  }
 ```
@@ -212,15 +186,8 @@ Task {
 
 ```swift
 Task {
-    let config = UpdateServiceConfig()
-    config.viewConfig.style = .popover2
+    let config = UpdateServiceConfig(style: .popover2)
     config.viewConfig.contentViewBackColor = .clear
-    config.viewConfig.popupViewBackColor = .black
-    config.viewConfig.headerTitleColor = .white
-    config.viewConfig.updateImageType = .gear
-    config.viewConfig.updateImageColor = .orange
-    config.viewConfig.updateButtonBackColor = .orange
-    config.viewConfig.versionTextColor = .orange
     await ForceUpdateKit().configure(config: config)
  }
 ```
